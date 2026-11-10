@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4a0404">
+  <title>Lote - Red Gold</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/icones/icone-192.png">
+  <link rel="apple-touch-icon" href="/icones/icone-192.png">
+  <link rel="stylesheet" href="/css/estilo.css">
+</head>
+<body>
+  <header>
+    <img src="/icones/icone-192.png" alt="Red Gold">
+    <h1>Red Gold - Estoque</h1>
+    <button id="botao-instalar" hidden>Instalar app</button>
+  </header>
+  <nav id="menu"></nav>
+  <div id="aviso-offline" hidden>Sem conexão. Os dados podem estar desatualizados.</div>
+  <main>
+    <a href="/index.html" class="voltar">&larr; Voltar para lotes</a>
+    <div class="topo">
+      <h2 id="titulo">Lote</h2>
+      <span id="status"></span>
+    </div>
+    <p class="erro" id="erro" hidden></p>
+
+    <div class="resumo">
+      <div class="item"><div class="rotulo">Quartos</div><div class="valor" id="resumo-quartos">-</div></div>
+      <div class="item"><div class="rotulo">Peso de chegada</div><div class="valor" id="resumo-chegada">-</div></div>
+      <div class="item"><div class="rotulo">Perda (ossos + sebo)</div><div class="valor" id="resumo-perda">-</div></div>
+      <div class="item"><div class="rotulo">% de perda</div><div class="valor" id="resumo-percentual">-</div></div>
+      <div class="item"><div class="rotulo">Peso final</div><div class="valor" id="resumo-final">-</div></div>
+    </div>
+
+    <div class="card" id="secao-quartos">
+      <h3>Quartos</h3>
+      <form id="form-quarto" hidden>
+        <label>Tipo
+          <select id="tipo">
+            <option value="Dianteiro">Dianteiro</option>
+            <option value="Traseiro">Traseiro</option>
+          </select>
+        </label>
+        <label>Peso (kg)
+          <input id="peso" type="number" step="0.1" min="0.1" inputmode="decimal" required>
+        </label>
+        <button type="submit">Lançar</button>
+        <p class="erro" id="erro-quarto" hidden></p>
+      </form>
+      <p id="aviso-pendentes" hidden></p>
+      <div class="tabela">
+        <table>
+          <thead>
+            <tr>
+              <th>Tipo</th>
+              <th class="numero">Peso</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="lista-quartos"></tbody>
+        </table>
+      </div>
+      <div class="acoes">
+        <button id="botao-concluir" hidden>Concluir recebimento</button>
+      </div>
+    </div>
+
+    <div class="card" id="secao-perda" hidden>
+      <h3>Perda</h3>
+      <form id="form-perda">
+        <label>Ossos + sebo (kg)
+          <input id="peso-perda" type="number" step="0.01" min="0" inputmode="decimal" required>
+        </label>
+        <button type="submit">Salvar perda</button>
+        <p class="erro" id="erro-perda" hidden></p>
+      </form>
+    </div>
+
+    <div class="card" id="secao-producao">
+      <h3>Produção</h3>
+      <form id="form-producao" hidden>
+        <label>Produto
+          <select id="produto"></select>
+        </label>
+        <label>Embalagens
+          <input id="embalagens" type="number" step="1" min="1" inputmode="numeric" required>
+        </label>
+        <label>Peso (kg)
+          <input id="peso-producao" type="number" step="0.01" min="0.01" inputmode="decimal" required>
+        </label>
+        <button type="submit">Lançar produção</button>
+        <p class="erro" id="erro-producao" hidden></p>
+      </form>
+      <div class="tabela">
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Produto</th>
+              <th class="numero">Embalagens</th>
+              <th class="numero">Peso</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="lista-producao"></tbody>
+        </table>
+      </div>
+      <div class="acoes">
+        <button id="botao-finalizar" hidden>Finalizar lote</button>
+        <button id="botao-reabrir" class="secundario" hidden>Reabrir lote</button>
+      </div>
+    </div>
+  </main>
+  <script src="/js/comum.js"></script>
+  <script src="/js/lote.js"></script>
+</body>
+</html>

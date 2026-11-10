@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4a0404">
+  <title>Produtos - Red Gold</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/icones/icone-192.png">
+  <link rel="apple-touch-icon" href="/icones/icone-192.png">
+  <link rel="stylesheet" href="/css/estilo.css">
+</head>
+<body>
+  <header>
+    <img src="/icones/icone-192.png" alt="Red Gold">
+    <h1>Red Gold - Estoque</h1>
+    <button id="botao-instalar" hidden>Instalar app</button>
+  </header>
+  <nav id="menu"></nav>
+  <div id="aviso-offline" hidden>Sem conexão. Os dados podem estar desatualizados.</div>
+  <main>
+    <h2>Produtos</h2>
+    <div class="card">
+      <form id="form-produto">
+        <label>Novo produto
+          <input id="nome" type="text" maxlength="60" required>
+        </label>
+        <button type="submit">Incluir</button>
+        <p class="erro" id="erro" hidden></p>
+      </form>
+    </div>
+    <div class="tabela">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="lista-produtos"></tbody>
+      </table>
+    </div>
+  </main>
+  <script src="/js/comum.js"></script>
+  <script src="/js/produtos.js"></script>
+</body>
+</html>

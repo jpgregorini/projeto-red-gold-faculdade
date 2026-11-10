@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4a0404">
+  <title>Lotes - Red Gold</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/icones/icone-192.png">
+  <link rel="apple-touch-icon" href="/icones/icone-192.png">
+  <link rel="stylesheet" href="/css/estilo.css">
+</head>
+<body>
+  <header>
+    <img src="/icones/icone-192.png" alt="Red Gold">
+    <h1>Red Gold - Estoque</h1>
+    <button id="botao-instalar" hidden>Instalar app</button>
+  </header>
+  <nav id="menu"></nav>
+  <div id="aviso-offline" hidden>Sem conexão. Os dados podem estar desatualizados.</div>
+  <main>
+    <div class="topo">
+      <h2>Lotes</h2>
+      <button id="botao-novo-lote">Novo recebimento</button>
+    </div>
+    <p class="erro" id="erro" hidden></p>
+    <div class="tabela">
+      <table>
+        <thead>
+          <tr>
+            <th>Lote</th>
+            <th>Chegada</th>
+            <th class="numero">Quartos</th>
+            <th class="numero">Peso chegada</th>
+            <th class="numero">Perda</th>
+            <th class="numero">% perda</th>
+            <th class="numero">Peso final</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="lista-lotes"></tbody>
+      </table>
+    </div>
+  </main>
+  <script src="/js/comum.js"></script>
+  <script src="/js/lotes.js"></script>
+</body>
+</html>

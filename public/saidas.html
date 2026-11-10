@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4a0404">
+  <title>Saídas - Red Gold</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/icones/icone-192.png">
+  <link rel="apple-touch-icon" href="/icones/icone-192.png">
+  <link rel="stylesheet" href="/css/estilo.css">
+</head>
+<body>
+  <header>
+    <img src="/icones/icone-192.png" alt="Red Gold">
+    <h1>Red Gold - Estoque</h1>
+    <button id="botao-instalar" hidden>Instalar app</button>
+  </header>
+  <nav id="menu"></nav>
+  <div id="aviso-offline" hidden>Sem conexão. Os dados podem estar desatualizados.</div>
+  <main>
+    <h2>Saídas</h2>
+    <div class="card">
+      <form id="form-saida">
+        <label>Produto
+          <select id="produto"></select>
+        </label>
+        <label>Embalagens
+          <input id="embalagens" type="number" step="1" min="1" inputmode="numeric" required>
+        </label>
+        <label>Peso (kg)
+          <input id="peso" type="number" step="0.01" min="0.01" inputmode="decimal" required>
+        </label>
+        <button type="submit">Registrar saída</button>
+        <p class="erro" id="erro" hidden></p>
+      </form>
+    </div>
+    <div class="tabela">
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Produto</th>
+            <th class="numero">Embalagens</th>
+            <th class="numero">Peso</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="lista-saidas"></tbody>
+      </table>
+    </div>
+  </main>
+  <script src="/js/comum.js"></script>
+  <script src="/js/saidas.js"></script>
+</body>
+</html>

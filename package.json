@@ -1,0 +1,13 @@
+{
+  "name": "projeto-red-gold-faculdade",
+  "version": "1.0.0",
+  "description": "Sistema de estoque da Red Gold (PWA)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
